@@ -33,7 +33,7 @@ public class SenseColor {
     
     private ByteBuffer buffy = ByteBuffer.allocate(8);
     
-    public short red = 0, green = 0, blue = 0, prox = 0;
+    public short red = 0, green = 0, blue = 0, prox = 0, white = 0;
     
     public SenseColor(I2C.Port port) {
         buffy.order(ByteOrder.LITTLE_ENDIAN);
@@ -63,6 +63,11 @@ public class SenseColor {
         
         prox = buffy.getShort(6); 
         if(prox < 0) { prox += 0b10000000000000000; }
+
+        white = buffy.getShort(8);
+        if(white < 0) { white += 0b10000000000000000; }
+        if(white > 200) { System.out.println("Yep; that's white alright.");}
+
         
     }
     
@@ -77,4 +82,3 @@ public class SenseColor {
     }
 
 }
-

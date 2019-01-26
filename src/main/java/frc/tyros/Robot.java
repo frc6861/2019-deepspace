@@ -16,6 +16,7 @@ import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
 import frc.tyros.commands.Drive;
+import frc.tyros.commands.SenseColor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,10 +29,12 @@ public class Robot extends TimedRobot {
   //private ExampleSubsystem m_subsystem = new ExampleSubsystem();
   private OI m_oi;
   private DriveTrain driveTrain; 
+  private Elevator elevator;
+  private Ingestor ingestor;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
-
+  
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -141,7 +144,23 @@ public class Robot extends TimedRobot {
 
 	public void setDriveTrain(DriveTrain driveTrain) {
 		this.driveTrain = driveTrain;
-	}
+  }
+  
+  public Elevator getElevator() {
+    return elevator;
+  }
+
+  public void setElevator(Elevator elevator) {
+    this.elevator = elevator;
+  }
+
+  public Ingestor getIngestor() {
+    return ingestor;
+  }
+
+  public void setIngestor(Ingestor ingestor) {
+    this.ingestor = ingestor;
+  }
 
 	public OI getM_oi() {
 		return m_oi;
