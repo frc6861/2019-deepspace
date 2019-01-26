@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.tyros.commands.ExampleCommand;
 import frc.tyros.subsystems.ExampleSubsystem;
+import frc.tyros.commands.DriveWithJoyStick;
+import frc.tyros.subsystems.DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
