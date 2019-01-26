@@ -130,4 +130,9 @@ public class Robot extends TimedRobot {
   @Override
   public void testPeriodic() {
   }
+
+  public OI getmOi(){
+    return m_oi;
+  }
+  
 }
