@@ -14,6 +14,11 @@ import edu.wpi.first.wpilibj.XboxController;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+  private  XboxController gamePad;
+  
+  public OI(){
+    gamePad = new XboxController(0);
+  }
   public XboxController getGamePad() {
 		return null;
   }

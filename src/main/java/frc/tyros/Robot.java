@@ -12,9 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.tyros.commands.ExampleCommand;
-import frc.tyros.subsystems.ExampleSubsystem;
-import frc.tyros.commands.DriveWithJoyStick;
 import frc.tyros.subsystems.DriveTrain;
 
 /**
@@ -40,7 +37,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_oi = new OI();
     driveTrain=new DriveTrain(m_oi);
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
+    
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }

@@ -9,14 +9,15 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveWithJoyStick extends Command {
+public class Drive extends Command {
 	private DriveTrain driveTrain;
-	private XboxController gamePad;
-    public DriveWithJoyStick(DriveTrain driveTrain,XboxController gamePad) {
+    private XboxController gamePad;
+    
+    public Drive(DriveTrain driveTrain,XboxController gamePad) {
     this.driveTrain=driveTrain;
     this.gamePad = gamePad;
     requires(driveTrain);
-    // Spark spark1 = new Spark(0);
+    
     
     }
 
