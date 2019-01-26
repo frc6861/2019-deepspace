@@ -15,7 +15,7 @@ public class DriveTrain extends Subsystem {
 	private WPI_TalonSRX rightFront1;
 	private WPI_TalonSRX leftRear1;
 	private WPI_TalonSRX rightRear1;
-    private  MecanumDrive mecanumDrive;
+    private MecanumDrive mecanumDrive;
     private XboxController gamePad;
     private OI m_oi;
 	

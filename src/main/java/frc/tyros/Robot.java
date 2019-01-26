@@ -25,8 +25,9 @@ import frc.tyros.subsystems.DriveTrain;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static OI m_oi;
+  //private ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  private OI m_oi;
+  private DriveTrain driveTrain; 
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    driveTrain=new DriveTrain(m_oi);
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
@@ -130,4 +132,20 @@ public class Robot extends TimedRobot {
   @Override
   public void testPeriodic() {
   }
+
+  public DriveTrain getDriveTrain() {
+		return driveTrain;
+	}
+
+	public void setDriveTrain(DriveTrain driveTrain) {
+		this.driveTrain = driveTrain;
+	}
+
+	public OI getM_oi() {
+		return m_oi;
+	}
+
+	public void setM_oi(OI m_oi) {
+		this.m_oi = m_oi;
+	}
 }
