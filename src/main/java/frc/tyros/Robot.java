@@ -16,7 +16,7 @@ import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
 import frc.tyros.commands.Drive;
-import frc.tyros.commands.SenseColor;
+import frc.tyros.commands.AdafruitColor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +31,7 @@ public class Robot extends TimedRobot {
   private DriveTrain driveTrain; 
   private Elevator elevator;
   private Ingestor ingestor;
+  private AdafruitColor adafruit;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -42,8 +43,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    driveTrain=new DriveTrain(m_oi);
-    
+    driveTrain = new DriveTrain(m_oi);
+    adafruit = new AdafruitColor();
+    adafruit.init();
+
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
@@ -58,6 +61,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    
   }
 
   /**
@@ -88,6 +92,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_chooser.getSelected();
+    Command m_adafruitColor = m_chooser.getSelected();
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -99,6 +104,9 @@ public class Robot extends TimedRobot {
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
       m_autonomousCommand.start();
+    }
+    if (m_adafruitColor != null) {
+      m_adafruitColor.start();
     }
   }
 
@@ -118,6 +126,10 @@ public class Robot extends TimedRobot {
     // this line or comment it out.
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
+    }
+    while (true) {
+      adafruit.readColors();
+    System.out.println(adafruit.getBlueVal() + adafruit.getGreenVal() + adafruit.getRedVal());
     }
   }
 
