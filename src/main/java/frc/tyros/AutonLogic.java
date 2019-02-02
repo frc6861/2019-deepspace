@@ -3,7 +3,7 @@
 	0) use prox sensor to always detect if a robot is within a few feet
 	0) manual override (at every individual command, we will use a button press to stop the program and start teleop)
 
-	ROCKET AUTON
+ROCKET AUTON
 
 		START HATCH BALL LOADED [START AT SIDE OF PLATFORM] <HORIZONTAL VALUES ARE REVERSED FOR THE OTHER ROCKET> 
 		(BOTTOM 2 HATCHES AND THEN 2 BALLS) **THIS LOOP WILL CONTINUE AFTER SANDSTORM TO WORK, YOU MUST USE HUMAN PLAYERS**
@@ -66,8 +66,9 @@ CARGO AUTON
 		15) drive back a longer distance
 		16) rotate 90 degrees toward cargo ship
 		17) use color sensors to follow white line
-		18) use color sensors to follow white line
+		18) use prox sensor to stop
 		19) drop HATCH in a spot
+
 CARGO AUTON
 
 		START HATCH LOADED [START AT CENTER] <HORIZONTAL VALUES ARE REVERSED FOR THE OTHER SIDE OF THE CARGO SHIP>
@@ -90,6 +91,7 @@ CARGO AUTON
 		16) use color sensors to follow white line
 		17) prox sensor to stop right in front of cargo
 		18) drop HATCH in a spot
+
 CARGO AUTON
 
 		START HATCH LOADED [START AT EDGE OF PLATFORM] <HORIZONTAL VALUES ARE REVERSED FOR THE OTHER SIDE OF THE CARGO SHIP>
@@ -111,6 +113,7 @@ CARGO AUTON
 		15) white line to align
 		16) prox sensor to stop
 		17) place HATCH
+
 CARGO AUTON
 		
 		START WITH HATCH LOADED [START AT CENTER] (MIDDLE 1 HATCH)
@@ -119,6 +122,7 @@ CARGO AUTON
 		3) prox sensor to stop
 		4) place HATCH
 		5) back up along white line then back up for about 2 more seconds (to be just in front of the HAB line)
+
 CARGO/ROCKET AUTON
 
 		START HATCH LOADED [START AT EDGE OF PLATFORM] <HORIZONTAL VALUES ARE REVERSED FOR THE OTHER SIDE OF THE CARGO SHIP>
