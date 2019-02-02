@@ -28,7 +28,7 @@ public class RaiseElevator extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	elevator.driveElevator(/*gamePad.getRB //I don't know how to call the bumper value*/);
+    	elevator.driveElevator(gamePad.getTriggerAxis(GenericHID.Hand.kRight)); //Not sure if this is correct, will test when we get a robot @mechanical
     }
 
     //  Make this return true when this Command no longer needs to run execute()
