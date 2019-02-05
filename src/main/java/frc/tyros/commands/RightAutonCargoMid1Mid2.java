@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
 /**
  *
  */
-public class AutonCargoMid1Mid2 extends TimedCommand {
+public class RightAutonCargoMid1Mid2 extends TimedCommand {
 
     private DriveTrain driveTrain;
 
-	public AutonCargoMid1Mid2(double timeout,DriveTrain driveTrain) {
+	public RightAutonCargoMid1Mid2(double timeout,DriveTrain driveTrain) {
         super(timeout);
         // Use requires() here to declare subsystem dependencies
         this.driveTrain=driveTrain;
@@ -31,11 +31,11 @@ public class AutonCargoMid1Mid2 extends TimedCommand {
             //use mechanism to push hatch
             driveTrain.setMecanumDriveCommand(-0.5, 0, 0, 0); //Use color sensor to follow white line until it no longer sees it
             driveTrain.setMecanumDriveCommand(0, 0, 0.5, 0); //to rotate 180 degrees
-            driveTrain.setMecanumDriveCommand(0, 0.5, 0, 0); //to strafe and align with human player
+            driveTrain.setMecanumDriveCommand(0, -0.5, 0, 0); //to strafe and align with human player
             driveTrain.setMecanumDriveCommand(0.5, 0, 0, 0); //to drive up to human player. Will need to use color sensor and prox sensor for reliability
             //pick up the hatch
             driveTrain.setMecanumDriveCommand(0, 0, 0.5, 0); //to rotate 180 degrees
-            driveTrain.setMecanumDriveCommand(0.6, 0.3, 0, 0); //to strafe to other middle spot
+            driveTrain.setMecanumDriveCommand(0.6, -0.3, 0, 0); //to strafe to other middle spot
             driveTrain.setMecanumDriveCommand(0.2, 0, 0, 0); //to line up, need color sensor and prox sensor for reliability
             //use mechanism to push hatch
     	}

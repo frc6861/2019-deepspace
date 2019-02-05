@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
 /**
  *
  */
-public class AutonCargoMid1CargoSide1 extends TimedCommand {
+public class LeftAutonCargoMid1CargoSide1 extends TimedCommand {
 
     private DriveTrain driveTrain;
 
-	public AutonCargoMid1CargoSide1(double timeout,DriveTrain driveTrain) {
+	public LeftAutonCargoMid1CargoSide1(double timeout,DriveTrain driveTrain) {
         super(timeout);
         // Use requires() here to declare subsystem dependencies
         this.driveTrain=driveTrain;
