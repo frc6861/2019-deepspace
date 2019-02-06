@@ -46,6 +46,7 @@ public class Robot extends TimedRobot {
     driveTrain = new DriveTrain(m_oi);
     adafruit = new AdafruitColor();
     adafruit.init();
+    
 
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
@@ -92,7 +93,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousInit() {
     m_autonomousCommand = m_chooser.getSelected();
-    Command m_adafruitColor = m_chooser.getSelected();
+    
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -105,9 +106,7 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.start();
     }
-    if (m_adafruitColor != null) {
-      m_adafruitColor.start();
-    }
+    
   }
 
   /**
