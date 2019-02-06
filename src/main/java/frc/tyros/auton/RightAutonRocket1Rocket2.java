@@ -1,4 +1,4 @@
-package frc.tyros.commands;
+package frc.tyros.auton;
 
 import frc.tyros.subsystems.DriveTrain;
 
