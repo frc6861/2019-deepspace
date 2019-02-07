@@ -13,8 +13,8 @@ public class Ingestor extends Subsystem {
     private Spark ingestorRight;
 
     public Ingestor() {
-        ingestorLeft = new Spark(2);
-        ingestorRight = new Spark(5);
+        ingestorLeft = new Spark(13);
+        ingestorRight = new Spark(2);
     }
   // Put methods for controlling this subsystem
   // here. Call these from Commands.

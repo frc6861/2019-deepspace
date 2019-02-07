@@ -18,10 +18,10 @@ public class DriveTrain extends Subsystem {
     private XboxController gamePad;
     
 	public DriveTrain(OI m_oi) {
-    	leftFront = new WPI_TalonSRX(1);
-    	rightFront = new WPI_TalonSRX(3);
-    	leftRear= new WPI_TalonSRX(2);
-    	rightRear = new WPI_TalonSRX(4);
+    	leftFront = new WPI_TalonSRX(0);
+    	rightFront = new WPI_TalonSRX(14);
+    	leftRear= new WPI_TalonSRX(1);
+    	rightRear = new WPI_TalonSRX(15);
     	mecanumDrive = new MecanumDrive(leftFront,leftRear,rightFront,rightRear);
     	gamePad=m_oi.getGamePad();
     }
