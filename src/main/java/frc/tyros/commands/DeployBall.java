@@ -2,8 +2,8 @@ package frc.tyros.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.tyros.OI;
 
-public class Deploy extends Command {
-public Deploy(OI m_oi) {
+public class DeployBall extends Command {
+public DeployBall(OI m_oi) {
 }
 
 protected void initialize() {
