@@ -18,7 +18,10 @@ import frc.tyros.commands.DeployHatch;
 import frc.tyros.commands.Deploy;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RunIngestor;
+import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
+import frc.tyros.commands.AntiClockwiseTurn;
+import frc.tyros.commands.ClockwiseTurn;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,6 +33,7 @@ public class OI {
   buttonY2,buttonX2,buttonA2,buttonB2,buttonLB2,buttonBack2,buttonRB2,buttonStart2,buttonClickLeft2,buttonClickRight2,buttonLT2,buttonRT2;
   private CameraServer camera;
   private Elevator elevator;
+  private DriveTrain driveTrain;
   
   public OI(){
     gamePad1 = new XboxController(0);
@@ -73,8 +77,8 @@ public class OI {
     buttonB1.whenPressed(new RunIngestor(this, 0.5)); //run ingestor outward
     buttonX1.whenPressed(new LiftIngestor(this, 0.5)); //put ingestor up to pick up hatches
     buttonY1.whenPressed(new LiftIngestor(this, -0.5)); //put ingestor back down
-    //buttonClickLeft1.whenPressed(turn left 90); //rotate left 90 deg
-    //buttonClickRight1.whenPressed(turn right 90); //rotate right 90 deg
+    buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.26, driveTrain)); //rotate left 90 deg
+    buttonClickRight1.whenPressed(new ClockwiseTurn(0.26, driveTrain)); //rotate right 90 deg
     buttonLB1.whenPressed(new DeployHatch(this)); //deploy hatch
     buttonRB1.whenPressed(new Deploy(this)); //shoot ball
     buttonBack1.whileHeld(new AutonOverride(this));
