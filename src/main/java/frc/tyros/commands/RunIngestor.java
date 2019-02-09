@@ -1,10 +1,12 @@
 package frc.tyros.commands;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.tyros.OI;
+import frc.tyros.subsystems.Ingestor;
 
 public class RunIngestor extends Command {
 private double ingestorSpeed;
-public RunIngestor(OI m_oi, double ingestorSpeed) {
+public RunIngestor(OI oi, double d) {
     //requires(ingestor)
     this.ingestorSpeed = ingestorSpeed;
 }

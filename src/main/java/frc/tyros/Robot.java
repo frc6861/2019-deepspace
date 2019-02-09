@@ -15,8 +15,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
+import frc.tyros.commands.AutonOverride;
+import frc.tyros.commands.Climb;
+import frc.tyros.commands.Deploy;
 import frc.tyros.commands.Drive;
+import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RaiseElevator;
+import frc.tyros.commands.RunIngestor;
 
 
 /**
@@ -46,6 +51,7 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     driveTrain = new DriveTrain(m_oi);
     elevator = new Elevator(m_oi);
+    ingestor = new Ingestor(m_oi);
 
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);

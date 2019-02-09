@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.XboxController;
 
 import frc.tyros.OI;
+import frc.tyros.commands.LiftIngestor;
+import frc.tyros.commands.RunIngestor;
 
 /**
  * An example subsystem. You can replace me with your own Subsystem.
@@ -19,6 +21,7 @@ public class Ingestor extends Subsystem {
     private Compressor compressor;
     private DoubleSolenoid solenoidW;
     private DoubleSolenoid solenoidL;
+    private XboxController gamepad;
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -46,8 +49,9 @@ public class Ingestor extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+    
     }
 
     
 }
-// testing
+
