@@ -23,7 +23,7 @@ public class Ingestor extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    public Ingestor() {
+    public Ingestor(OI m_OI) {
         compressor = new Compressor(0);
         leftMotor = new WPI_TalonSRX(13);
         rightMotor = new WPI_TalonSRX(2);
@@ -42,12 +42,12 @@ public class Ingestor extends Subsystem {
         solenoidW.set(DoubleSolenoid.Value.kReverse);
     }
 
-    @Override
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
-
     }
 
     
 }
+// testing
