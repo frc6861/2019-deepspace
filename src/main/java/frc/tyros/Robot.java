@@ -22,7 +22,17 @@ import frc.tyros.commands.Drive;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RaiseElevator;
 import frc.tyros.commands.RunIngestor;
-
+import frc.tyros.auton.AutonCargoMid1;
+import frc.tyros.auton.LeftAutonCargoMid1CargoSide1;
+import frc.tyros.auton.LeftAutonCargoMid1Mid2;
+import frc.tyros.auton.LeftAutonCargoSide1Rocket1;
+import frc.tyros.auton.LeftAutonCargoSide1Side2;
+import frc.tyros.auton.LeftAutonRocket1Rocket2;
+import frc.tyros.auton.RightAutonCargoMid1CargoSide1;
+import frc.tyros.auton.RightAutonCargoMid1Mid2;
+import frc.tyros.auton.RightAutonCargoSide1Rocket1;
+import frc.tyros.auton.RightAutonCargoSide1Side2;
+import frc.tyros.auton.RightAutonRocket1Rocket2;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -55,6 +65,19 @@ public class Robot extends TimedRobot {
 
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+		m_chooser = new SendableChooser();
+    m_chooser.addObject("LeftAutonCargoMid1CargoSide1", new LeftAutonCargoMid1CargoSide1(15,driveTrain));
+    m_chooser.addObject("LeftAutonCargoMid1Mid2", new LeftAutonCargoMid1Mid2(15,driveTrain));
+    m_chooser.addObject("LeftAutonCargoSide1Rocket1", new LeftAutonCargoSide1Rocket1(15,driveTrain));
+    m_chooser.addObject("LeftAutonCargoSide1Side2", new LeftAutonCargoSide1Side2(15,driveTrain));
+    m_chooser.addObject("LeftAutonRocket1Rocket2", new LeftAutonRocket1Rocket2(15,driveTrain));
+    m_chooser.addObject("RightAutonCargoMid1CargoSide1", new RightAutonCargoMid1CargoSide1(15,driveTrain));
+    m_chooser.addObject("RightAutonCargoMid1Mid2", new RightAutonCargoMid1Mid2(15,driveTrain));
+    m_chooser.addObject("RightAutonCargoSide1Rocket1", new RightAutonCargoSide1Rocket1(15,driveTrain));
+    m_chooser.addObject("RightAutonCargoSide1Side2", new RightAutonCargoSide1Side2(15,driveTrain));
+    m_chooser.addObject("RightAutonRocket1Rocket2", new RightAutonRocket1Rocket2(15,driveTrain));
+		m_chooser.addDefault("AutonCargoMid1", new AutonCargoMid1(15,driveTrain));
+		SmartDashboard.putData("Autonomous mode chooser", m_chooser);
   }
 
   /**
