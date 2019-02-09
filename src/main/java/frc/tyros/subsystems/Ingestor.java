@@ -38,11 +38,18 @@ public class Ingestor extends Subsystem {
     
     public void extend() {
         solenoidW.set(DoubleSolenoid.Value.kForward);
-
     }
 
     public void retract() {
         solenoidW.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void lift() {
+        solenoidL.set(DoubleSolenoid.Value.kForward);
+    }
+
+    public void lower() {
+        solenoidL.set(DoubleSolenoid.Value.kReverse);
     }
 
     
