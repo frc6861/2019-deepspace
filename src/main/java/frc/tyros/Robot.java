@@ -17,7 +17,7 @@ import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
 import frc.tyros.commands.AutonOverride;
 import frc.tyros.commands.Climb;
-import frc.tyros.commands.Deploy;
+import frc.tyros.commands.DeployBall;
 import frc.tyros.commands.Drive;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RaiseElevator;

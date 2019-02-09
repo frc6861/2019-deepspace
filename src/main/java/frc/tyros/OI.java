@@ -15,7 +15,7 @@ import frc.tyros.commands.RaiseElevator;
 import frc.tyros.commands.AutonOverride;
 import frc.tyros.commands.Climb;
 import frc.tyros.commands.DeployHatch;
-import frc.tyros.commands.Deploy;
+import frc.tyros.commands.DeployBall;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RunIngestor;
 import frc.tyros.subsystems.DriveTrain;
@@ -80,7 +80,7 @@ public class OI {
     buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.26, driveTrain)); //rotate left 90 deg
     buttonClickRight1.whenPressed(new ClockwiseTurn(0.26, driveTrain)); //rotate right 90 deg
     buttonLB1.whenPressed(new DeployHatch(this)); //deploy hatch
-    buttonRB1.whenPressed(new Deploy(this)); //shoot ball
+    buttonRB1.whenPressed(new DeployBall(this)); //shoot ball
     buttonBack1.whileHeld(new AutonOverride(this));
     buttonA2.whenPressed(new RaiseElevator(this, 80)); //ballCargoShip
     buttonX2.whenPressed(new RaiseElevator(this, 48)); //hatchRocketandCargoShip
