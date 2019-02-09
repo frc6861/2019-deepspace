@@ -1,7 +1,7 @@
 package frc.tyros.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
+import frc.tyros.OI;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -19,7 +19,7 @@ public class Elevator extends Subsystem {
   
   // here. Call these fro
 
-  public Elevator(){
+  public Elevator(OI m_oi){
     elevatorMotor = new WPI_TalonSRX(12);
   }
 
@@ -30,7 +30,8 @@ public class Elevator extends Subsystem {
 
   }
 
-  public void driveElevator(double speed) {
+  public void driveElevator(double speed) /*Use Versaplanetary encoders to make this work*/{
+    //depending on what button is pressed, speed = variable;
     elevatorMotor.set(speed);
   }
 

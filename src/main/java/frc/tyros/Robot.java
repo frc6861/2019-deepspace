@@ -16,6 +16,7 @@ import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
 import frc.tyros.commands.Drive;
+import frc.tyros.commands.RaiseElevator;
 
 
 /**
@@ -44,7 +45,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_oi = new OI();
     driveTrain = new DriveTrain(m_oi);
-        
+    elevator = new Elevator(m_oi);
 
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
