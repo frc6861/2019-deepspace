@@ -5,7 +5,6 @@ import frc.tyros.movement.StopMoving;
 import frc.tyros.movement.TurnRight;
 import frc.tyros.movement.MoveRight;
 import frc.tyros.subsystems.DriveTrain;
-import frc.tyros.movement.StrafeLeftMoveForward;
 import frc.tyros.movement.StrafeRightMoveForward;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -29,7 +28,7 @@ public class RightAutonCargoMid1Mid2 extends CommandGroup {
         addSequential(new MoveForward(3, driveTrain, 0.5));
         //use mechanism to pick up hatch
         addSequential(new TurnRight(0.5, driveTrain, -0.5));//turn left
-        addSequential(new StrafeLeftMoveForward(2, driveTrain));
+        addSequential(new StrafeRightMoveForward(2, driveTrain, 0.4, -0.4));//forward and left
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
         
         

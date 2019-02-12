@@ -6,7 +6,6 @@ import frc.tyros.movement.StopMoving;
 import frc.tyros.movement.TurnRight;
 import frc.tyros.movement.MoveRight;
 import frc.tyros.subsystems.DriveTrain;
-import frc.tyros.movement.StrafeLeftMoveForward;
 import frc.tyros.movement.StrafeRightMoveForward;
 
 import edu.wpi.first.wpilibj.DriverStation;
