@@ -9,10 +9,12 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
  *
  */
 public class MoveRight extends TimedCommand {
-	private DriveTrain driveTrain;
-    public MoveRight(double timeout, DriveTrain driveTrain) {
+    private DriveTrain driveTrain;
+    private double speed;
+    public MoveRight(double timeout, DriveTrain driveTrain, double speed) {
     	 super (timeout);
-    	this.driveTrain=driveTrain;
+        this.driveTrain=driveTrain;
+        this.speed=speed;
     	 requires(driveTrain);
     }
 
@@ -22,7 +24,7 @@ public class MoveRight extends TimedCommand {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-			driveTrain.setMecanumDriveCommand(0, 0.5, 0, 0);
+			driveTrain.setMecanumDriveCommand(0, speed, 0, 0);
     	
     }
 
