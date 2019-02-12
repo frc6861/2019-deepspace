@@ -31,11 +31,12 @@ public class Ingestor extends Subsystem {
         leftMotor = new WPI_TalonSRX(13);
         rightMotor = new WPI_TalonSRX(2);
         solenoidW = new DoubleSolenoid(1, 2);
-        solenoidL = new DoubleSolenoid(3, 4); // TODO get channel number, rename
+        solenoidL = new DoubleSolenoid(3, 4); // TODO get channel number, rename(fine for now, can be changed later)
         compressor.start();
     }
 
-    
+        // for pnuematics for wedge pickup
+
     public void extend() {
         solenoidW.set(DoubleSolenoid.Value.kForward);
     }
@@ -43,6 +44,7 @@ public class Ingestor extends Subsystem {
     public void retract() {
         solenoidW.set(DoubleSolenoid.Value.kReverse);
     }
+    // for pnuematics for adjustment
 
     public void lift() {
         solenoidL.set(DoubleSolenoid.Value.kForward);
