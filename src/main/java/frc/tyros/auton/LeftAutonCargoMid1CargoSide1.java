@@ -19,10 +19,10 @@ public class LeftAutonCargoMid1CargoSide1 extends CommandGroup {
 
 	public LeftAutonCargoMid1CargoSide1(double timeout,DriveTrain driveTrain) {
         addSequential(new MoveForward(2, driveTrain, 0.5));
-        addSequential(new StopMoving(0.01, driveTrain));
+        //addSequential(new StopMoving(0.01, driveTrain));
         //use mechanism to push hatch "DispenseTimed or whatever"
         addSequential(new MoveForward(2, driveTrain, -0.5)); //backward
-        addSequential(new StopMoving(0.01, driveTrain));
+        //addSequential(new StopMoving(0.01, driveTrain));
         addSequential(new TurnRight(0.5, driveTrain, 0.5));
         addSequential(new MoveRight(0.5, driveTrain, 0.5));
         addSequential(new MoveForward(3, driveTrain, 0.5));

@@ -23,10 +23,10 @@ public class AutonCargoMid1 extends CommandGroup {
 
     
           addSequential(new MoveForward(2, driveTrain, 0.5));
-          addSequential(new StopMoving(0.01, driveTrain));
+          //addSequential(new StopMoving(0.01, driveTrain));
           //use mechanism to push hatch "DispenseTimed or whatever"
           addSequential(new MoveForward(2, driveTrain, -0.5));//move backward
-          addSequential(new StopMoving(0.01, driveTrain));
+          //addSequential(new StopMoving(0.01, driveTrain));
 
         /*driveTrain.setMecanumDriveCommand(0.5, 0, 0, 0); //I believe the first value was forward at 50%.
             driveTrain.setMecanumDriveCommand(0.5, 0, 0, 0); // Use color sensor code to follow white line 
