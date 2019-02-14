@@ -1,18 +1,23 @@
 package frc.tyros.subsystems;
 
-//import edu.wpi.first.wpilibj.SampleRobot;
 import edu.wpi.first.wpilibj.Ultrasonic;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class ProximitySensor{ //extends SampleRobot {
+public class ProximitySensor extends Subsystem {
 
-	Ultrasonic ultra = new Ultrasonic(1,1); // creates the ultra object andassigns ultra to be an ultrasonic sensor which uses DigitalOutput 1 for 
-        // the echo pulse and DigitalInput 1 for the trigger pulse
-    public void robotInit() {
-    	ultra.setAutomaticMode(true); // turns on automatic mode
+    private Ultrasonic ultra = new Ultrasonic(1,1);
+    private double range;
+    
+    public ProximitySensor() {
+        ultra.setAutomaticMode(true);
+    }
+    
+    public void ultrasonicRange() {
+        double range = ultra.getRangeMM();
     }
 
-    public void ultrasonicSample() {
-        double range = ultra.getRangeInches(); // reads the range on the ultrasonic sensor
-        System.out.println("Distance: "+range);
+    @Override
+    protected void initDefaultCommand() {
+
     }
 }
