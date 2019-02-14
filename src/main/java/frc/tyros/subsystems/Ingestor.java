@@ -54,6 +54,11 @@ public class Ingestor extends Subsystem {
         solenoidL.set(DoubleSolenoid.Value.kReverse);
     }
 
+    public void driveMotors(double speed){
+        leftMotor.set(speed);
+        rightMotor.set(-speed);
+    }
+
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
