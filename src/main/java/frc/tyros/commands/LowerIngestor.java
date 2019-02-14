@@ -7,10 +7,10 @@ import frc.tyros.subsystems.Ingestor;
 /**
  *
  */
-public class LiftIngestor extends CommandGroup {
+public class LowerIngestor extends CommandGroup {
     private Ingestor ingestor;
-    public LiftIngestor(OI m_oi) {
+    public LowerIngestor(OI m_oi) {
         ingestor = m_oi.getIngestor();
-        ingestor.lift();
+        ingestor.lower();
     }
 }

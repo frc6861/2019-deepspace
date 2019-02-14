@@ -17,6 +17,7 @@ import frc.tyros.commands.Climb;
 import frc.tyros.commands.DeployHatch;
 import frc.tyros.commands.DeployBall;
 import frc.tyros.commands.LiftIngestor;
+import frc.tyros.commands.LowerIngestor;
 import frc.tyros.commands.RunIngestor;
 import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
@@ -78,8 +79,8 @@ public class OI {
   public void Init() {
     buttonA1.whenPressed(new RunIngestor(this, -0.5)); // run ingestor inward
     buttonB1.whenPressed(new RunIngestor(this, 0.5)); // run ingestor outward
-    buttonX1.whenPressed(new LiftIngestor(this, 0.5)); // put ingestor up to pick up hatches
-    buttonY1.whenPressed(new LiftIngestor(this, -0.5)); // put ingestor back down
+    buttonX1.whenPressed(new LiftIngestor(this)); // put ingestor up to pick up hatches
+    buttonY1.whenPressed(new LowerIngestor(this)); // put ingestor back down
     buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.26, driveTrain)); // rotate left 90 deg
     buttonClickRight1.whenPressed(new ClockwiseTurn(0.26, driveTrain)); // rotate right 90 deg
     buttonLB1.whenPressed(new DeployHatch(this)); // deploy hatch
