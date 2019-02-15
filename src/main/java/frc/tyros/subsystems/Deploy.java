@@ -1,19 +1,41 @@
-/*package frc.tyros.subsystems;
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
 
-//import edu.wpi.first.wpilibj.SensorUtil.kPCMModules;
+package frc.tyros.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.tyros.RobotMap;
 
-public class Deploy //extends insert command{
-    *import file* deployair;
-    double airright=6;
-    double airleft=12;
+/**
+ * Add your docs here.
+ */
+public class Deploy extends Subsystem {
+	// Put methods for controlling this subsystem
+	// here. Call these from Commands.
+	DoubleSolenoid pitchSolenoid = null;
 
-    @Override
-    public void initDefaultCommand() {
-        //Default command
-    }
+	public Deploy() {
+		pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_DEPLOY,
+				RobotMap.SHOOTER_PITCH_SOLENOID_RETRACT);
+	}
 
-    public void pushPiston(double pistonpos2) {
-        deployair.set(pistonpos2);
-    }
-}*/
+	public void pitchUp() {
+		pitchSolenoid.set(Value.kForward);
+	}
+
+	public void pitchDown() {
+		pitchSolenoid.set(Value.kForward);
+	}
+
+	@Override
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		// setDefaultCommand(new MySpecialCommand());
+	}
+}

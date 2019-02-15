@@ -11,17 +11,15 @@ import edu.wpi.first.wpilibj.Encoder;
 public class Elevator extends Subsystem {
   private WPI_TalonSRX elevatorMotor;
   private Encoder enc;
-
- /* private int ballCargoShip = 80; //80 cm from carpet
+  private int ballCargoShip = 80; //80 cm from carpet
   private int hatchRocketandCargoShip = 48; //48 cm from carpet default bottom height
   private int ballLowRocketShip = 70; //70 cm from carpet
   private int hatchMidRocketShip = 119; //119 cm from carpet
   private int ballMidRocketShip = 141; //141 cm from carpet
   private int hatchTopRocketShip = 190; //190 cm from carpet
   private int ballTopRocketShip = 212; //212 cm from carpet
-*/
+
   // here. Call these fro
-  private double currentPos;
 
   public Elevator(OI m_oi){
     elevatorMotor = new WPI_TalonSRX(12);
@@ -33,8 +31,8 @@ public class Elevator extends Subsystem {
     enc.setSamplesToAverage(7);
 
     enc.reset();
-    //private double encoderAmount;
   }
+  
 
   @Override
   public void initDefaultCommand() {
@@ -46,13 +44,11 @@ public class Elevator extends Subsystem {
   public void driveElevator(double speed) /*Use Versaplanetary encoders to make this work*/{
     //depending on what button is pressed, speed = variable;
     elevatorMotor.set(speed);
-    //setcurrentPos(currentPos+encoderAmount);
   }
-  
-  public double getcurrentPos(){
-    return currentPos;
-  }
-  public void setcurrentPos(double currentPos2){
-    currentPos = currentPos2;
-  }
+
+
+public double getcurrentPos() {
+	return 0;
+}
+
 }
