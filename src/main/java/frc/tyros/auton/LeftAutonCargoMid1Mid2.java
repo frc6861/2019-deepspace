@@ -1,14 +1,10 @@
 package frc.tyros.auton;
 
-import frc.tyros.movement.MoveBackward;
 import frc.tyros.movement.MoveForward;
 import frc.tyros.movement.StopMoving;
 import frc.tyros.movement.TurnRight;
-import frc.tyros.movement.TurnLeft;
-import frc.tyros.movement.MoveLeft;
 import frc.tyros.movement.MoveRight;
 import frc.tyros.subsystems.DriveTrain;
-import frc.tyros.movement.StrafeLeftMoveForward;
 import frc.tyros.movement.StrafeRightMoveForward;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -22,18 +18,18 @@ public class LeftAutonCargoMid1Mid2 extends CommandGroup {
     private DriveTrain driveTrain;
 
 	public LeftAutonCargoMid1Mid2(double timeout,DriveTrain driveTrain) {
-        addSequential(new MoveForward(2, driveTrain));
-        addSequential(new StopMoving(0.01, driveTrain));
+        addSequential(new MoveForward(2, driveTrain, 0.5));
+        //addSequential(new StopMoving(0.01, driveTrain));
         //use mechanism to push hatch "DispenseTimed or whatever"
-        addSequential(new MoveBackward(2, driveTrain));
-        addSequential(new StopMoving(0.01, driveTrain));
-        addSequential(new TurnRight(0.5, driveTrain));
-        addSequential(new MoveRight(0.5, driveTrain));
-        addSequential(new MoveForward(3, driveTrain));
+        addSequential(new MoveForward(2, driveTrain, -0.5)); //backward
+        //addSequential(new StopMoving(0.01, driveTrain));
+        addSequential(new TurnRight(0.5, driveTrain, 0.5));
+        addSequential(new MoveRight(0.5, driveTrain, 0.5));
+        addSequential(new MoveForward(3, driveTrain, 0.5));
         //use mechanism to pick up hatch
-        addSequential(new TurnRight(0.5, driveTrain));
-        addSequential(new StrafeRightMoveForward(2, driveTrain));
-        addSequential(new MoveForward(0.5, driveTrain));
+        addSequential(new TurnRight(0.5, driveTrain, 0.5));
+        addSequential(new StrafeRightMoveForward(2, driveTrain, 0.4, 0.4));
+        addSequential(new MoveForward(0.5, driveTrain, 0.5));
         
         
     }

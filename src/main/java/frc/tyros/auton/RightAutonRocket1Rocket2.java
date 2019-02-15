@@ -1,14 +1,10 @@
 package frc.tyros.auton;
 
-import frc.tyros.movement.MoveBackward;
 import frc.tyros.movement.MoveForward;
 import frc.tyros.movement.StopMoving;
 import frc.tyros.movement.TurnRight;
-import frc.tyros.movement.TurnLeft;
-import frc.tyros.movement.MoveLeft;
 import frc.tyros.movement.MoveRight;
 import frc.tyros.subsystems.DriveTrain;
-import frc.tyros.movement.StrafeLeftMoveForward;
 import frc.tyros.movement.StrafeRightMoveForward;
 
 import edu.wpi.first.wpilibj.DriverStation;
@@ -21,18 +17,18 @@ public class RightAutonRocket1Rocket2 extends CommandGroup {
     private DriveTrain driveTrain;
 
 	public RightAutonRocket1Rocket2(double timeout,DriveTrain driveTrain) {
-        addSequential(new MoveLeft(2, driveTrain));
-        addSequential(new TurnLeft(0.125, driveTrain));
-        addSequential(new MoveForward(0.5, driveTrain));
+        addSequential(new MoveRight(2, driveTrain, -0.5));//left
+        addSequential(new TurnRight(0.125, driveTrain, -0.5));//left
+        addSequential(new MoveForward(0.5, driveTrain, 0.5));
         //place hatch
-        addSequential(new MoveBackward(0.5, driveTrain));
-        addSequential(new TurnRight(0.375, driveTrain));
-        addSequential(new MoveForward(2, driveTrain));
+        addSequential(new MoveForward(0.5, driveTrain, -0.5));//backward
+        addSequential(new TurnRight(0.375, driveTrain, 0.5));
+        addSequential(new MoveForward(2, driveTrain, 0.5));
         //pick up hatch
-        addSequential(new TurnLeft(0.25, driveTrain));
-        addSequential(new MoveLeft(2.5, driveTrain));
-        addSequential(new TurnRight(0.125, driveTrain));
-        addSequential(new MoveForward(0.5, driveTrain));
+        addSequential(new TurnRight(0.25, driveTrain, -0.5));//turn left
+        addSequential(new MoveRight(2.5, driveTrain, -0.5));//left
+        addSequential(new TurnRight(0.125, driveTrain, 0.5));
+        addSequential(new MoveForward(0.5, driveTrain, 0.5));
         //place hatch
     }
 

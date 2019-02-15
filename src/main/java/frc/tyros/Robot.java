@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
-import frc.tyros.commands.AutonOverride;
+import frc.tyros.auton.AutonOverride;
 import frc.tyros.commands.Climb;
 import frc.tyros.commands.DeployBall;
 import frc.tyros.commands.Drive;

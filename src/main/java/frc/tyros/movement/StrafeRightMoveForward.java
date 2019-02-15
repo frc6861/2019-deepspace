@@ -9,10 +9,14 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
  *
  */
 public class StrafeRightMoveForward extends TimedCommand {
-	private DriveTrain driveTrain;
-    public StrafeRightMoveForward(double timeout, DriveTrain driveTrain) {
+    private DriveTrain driveTrain;
+    private double yspeed;
+    private double xspeed;
+    public StrafeRightMoveForward(double timeout, DriveTrain driveTrain, double yspeed, double xspeed) {
     	 super (timeout);
-    	this.driveTrain=driveTrain;
+        this.driveTrain=driveTrain;
+        this.xspeed=xspeed;
+        this.yspeed=yspeed;
     	 requires(driveTrain);
     }
 
@@ -22,7 +26,7 @@ public class StrafeRightMoveForward extends TimedCommand {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-			driveTrain.setMecanumDriveCommand(0.4, 0.45, 0, 0);
+			driveTrain.setMecanumDriveCommand(yspeed, xspeed, 0, 0);
     	
     }
 
