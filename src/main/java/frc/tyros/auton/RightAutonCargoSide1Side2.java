@@ -20,7 +20,8 @@ public class RightAutonCargoSide1Side2 extends CommandGroup {
 	public RightAutonCargoSide1Side2(double timeout,DriveTrain driveTrain) {
         addSequential(new MoveRight(2, driveTrain, 0.5));
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
         addSequential(new MoveForward(0.5, driveTrain, -0.5));//backward
         addSequential(new TurnRight(0.5, driveTrain, -0.5));//turn left
         addSequential(new MoveForward(2, driveTrain, 0.5));
@@ -29,7 +30,8 @@ public class RightAutonCargoSide1Side2 extends CommandGroup {
         addSequential(new MoveForward(2.5, driveTrain, 0.5));
         addSequential(new TurnRight(0.25, driveTrain, -0.5));//turn left
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
     }
 
     // Called just before this Command runs the first time

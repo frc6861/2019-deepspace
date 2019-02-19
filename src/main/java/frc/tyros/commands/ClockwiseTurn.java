@@ -16,6 +16,6 @@ public class ClockwiseTurn extends CommandGroup {
 
 	public ClockwiseTurn(double timeout,DriveTrain driveTrain) {
         addSequential(new TurnRight(0.25, driveTrain, 0.5));
-        addSequential(new StopMoving(0.01, driveTrain));
+        
     }
 }

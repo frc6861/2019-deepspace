@@ -7,10 +7,12 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.Solenoid;
 
 import frc.tyros.OI;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.RunIngestor;
+import frc.tyros.movement.MoveForward;
 
 /**
  * An example subsystem. You can replace me with your own Subsystem.
@@ -21,6 +23,8 @@ public class Ingestor extends Subsystem {
     private Compressor compressor;
     private DoubleSolenoid solenoidW;
     private DoubleSolenoid solenoidL;
+    private Solenoid solenoidB;
+    private DoubleSolenoid solenoidBH;
     private XboxController gamepad;
 
     // Put methods for controlling this subsystem
@@ -32,6 +36,8 @@ public class Ingestor extends Subsystem {
         rightMotor = new WPI_TalonSRX(2);
         solenoidW = new DoubleSolenoid(1, 2);
         solenoidL = new DoubleSolenoid(3, 4); // TODO get channel number, rename(fine for now, can be changed later)
+        solenoidB = new Solenoid(5);
+        solenoidBH = new DoubleSolenoid(6, 7);
         compressor.start();
     }
 
@@ -52,6 +58,22 @@ public class Ingestor extends Subsystem {
 
     public void lower() {
         solenoidL.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void extendBall() {
+        solenoidB.set(true);
+    }
+
+    public void retractBall() {
+        solenoidB.set(false);
+    }
+
+    public void backExtend() {
+        solenoidBH.set(DoubleSolenoid.Value.kForward);
+    }
+
+    public void backRetract() {
+        solenoidBH.set(DoubleSolenoid.Value.kReverse);
     }
 
     public void driveMotors(double speed){

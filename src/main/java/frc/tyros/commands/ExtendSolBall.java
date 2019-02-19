@@ -7,10 +7,10 @@ import frc.tyros.subsystems.Ingestor;
 /**
  *
  */
-public class RetractSol extends CommandGroup {
+public class ExtendSolBall extends CommandGroup {
     private Ingestor ingestor;
-    public RetractSol(OI m_oi) {
+    public ExtendSolBall(OI m_oi) {
         ingestor = m_oi.getIngestor();
-        ingestor.retract();
+        ingestor.extendBall();
     }
 }

@@ -21,7 +21,8 @@ public class LeftAutonRocket1Rocket2 extends CommandGroup {
         addSequential(new MoveRight(2, driveTrain, 0.5));
         addSequential(new TurnRight(0.125, driveTrain, 0.5));
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
         addSequential(new TurnRight(0.375, driveTrain, -0.5));//turn left
         addSequential(new MoveForward(2, driveTrain, 0.5));
@@ -30,7 +31,8 @@ public class LeftAutonRocket1Rocket2 extends CommandGroup {
         addSequential(new MoveRight(2.5, driveTrain, 0.5));
         addSequential(new TurnRight(0.125, driveTrain, -0.5));//turn left
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
     }
 
         //there are two ways to begin. You may either start at the edge of the platform facing forward and driveTrain.setMecanumDriveCommand(0.3, 0, 0, 0); and then driveTrain.setMecanumDriveCommand(0.3, 0.4, 0, 0); to drive up to rocket and turn to face it 45 deg with driveTrain.setMecanumDrive(0, 0, -0.125, 0);

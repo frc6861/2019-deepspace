@@ -12,18 +12,23 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.CameraServer;
 import frc.tyros.commands.RaiseElevator;
-import frc.tyros.commands.RetractSol;
+import frc.tyros.commands.RetractSolFront;
+import frc.tyros.commands.RetractSolBack;
 import frc.tyros.auton.AutonOverride;
 import frc.tyros.commands.Climb;
-import frc.tyros.commands.ExtendSol;
+import frc.tyros.commands.ExtendSolFront;
+import frc.tyros.commands.ExtendSolBack;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.LowerIngestor;
+import frc.tyros.commands.MoveElevatorDown;
+import frc.tyros.commands.MoveElevatorUp;
 import frc.tyros.commands.RunIngestor;
 import frc.tyros.subsystems.DriveTrain;
 import frc.tyros.subsystems.Elevator;
 import frc.tyros.subsystems.Ingestor;
 import frc.tyros.commands.AntiClockwiseTurn;
 import frc.tyros.commands.ClockwiseTurn;
+import frc.tyros.commands.DeployBall;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -56,9 +61,9 @@ public class OI {
     buttonLT1 = new JoystickButton(gamePad1, 11);
     buttonRT1 = new JoystickButton(gamePad1, 12);
 
-    buttonA2 = new JoystickButton(gamePad2, 1);// Elevator to Level 3 (To shoot ball into cargo ship)
-    buttonB2 = new JoystickButton(gamePad2, 2);// Elevator to Level 1 (Bottom hatch for rocket and cargo)
-    buttonX2 = new JoystickButton(gamePad2, 3);// Elevator to Level 2 (Bottom rocket port)
+    buttonA2 = new JoystickButton(gamePad2, 1);
+    buttonB2 = new JoystickButton(gamePad2, 2);
+    buttonX2 = new JoystickButton(gamePad2, 3);
     buttonY2 = new JoystickButton(gamePad2, 4);// Climb
     buttonLB2 = new JoystickButton(gamePad2, 5);// Elevator to Level 4 (Middle rocket hatch)
     buttonRB2 = new JoystickButton(gamePad2, 6);// Elevator to Level 5 (Middle rocket port)
@@ -78,23 +83,27 @@ public class OI {
 
   public void Init() {
     buttonA1.whenPressed(new RunIngestor(this, -0.5)); // run ingestor inward
-    buttonB1.whenPressed(new RunIngestor(this, 0.5)); // run ingestor outward
+    buttonB1.whenPressed(new DeployBall(this)); // run ingestor outward
     buttonX1.whenPressed(new LiftIngestor(this)); // put ingestor up to pick up hatches
     buttonY1.whenPressed(new LowerIngestor(this)); // put ingestor back down
-    buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.26, driveTrain)); // rotate left 90 deg
-    buttonClickRight1.whenPressed(new ClockwiseTurn(0.26, driveTrain)); // rotate right 90 deg
-    buttonLB1.whenPressed(new ExtendSol(this));
-    buttonRB1.whenPressed(new RetractSol(this));
-    buttonBack1.whileHeld(new AutonOverride(this));
-    buttonA2.whenPressed(new RaiseElevator(this, 80)); // ballCargoShip
-    buttonX2.whenPressed(new RaiseElevator(this, 48)); // hatchRocketandCargoShip
-    buttonB2.whenPressed(new RaiseElevator(this, 70)); // ballLowRocketShip
+    buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.25, driveTrain)); // rotate left 90 deg
+    buttonClickRight1.whenPressed(new ClockwiseTurn(0.25, driveTrain)); // rotate right 90 deg
+    buttonLB1.whenPressed(new ExtendSolFront(this)); // hatch out front
+    buttonRB1.whenPressed(new RetractSolFront(this)); // hatch in front
+    buttonLT1.whenPressed(new ExtendSolBack(this)); // hatch out back
+    buttonRT1.whenPressed(new RetractSolBack(this)); // hatch in back
+    buttonBack1.whileHeld(new AutonOverride(this)); // auton override
+    buttonA2.whenPressed(new RaiseElevator(this, 48)); // hatchRocketandCargoShip
+    buttonX2.whenPressed(new RaiseElevator(this, 78)); // ballLowRocketShip
+    buttonB2.whenPressed(new RaiseElevator(this, 80)); // ballCargoShip
     buttonLB2.whenPressed(new RaiseElevator(this, 119)); // hatchMidRocketShip
-    buttonLT2.whenPressed(new RaiseElevator(this, 141)); // ballMidRocketShip
-    buttonRT2.whenPressed(new RaiseElevator(this, 190)); // hatchTopRocketShip
-    buttonRB2.whenPressed(new RaiseElevator(this, 212)); // ballTopRocketShip
-    buttonBack2.whenPressed(new AutonOverride(this));
+    buttonRB2.whenPressed(new RaiseElevator(this, 141)); // ballMidRocketShip
+    buttonLT2.whenPressed(new RaiseElevator(this, 190)); // hatchTopRocketShip
+    buttonRT2.whenPressed(new RaiseElevator(this, 212)); // ballTopRocketShip
+    buttonBack2.whenPressed(new AutonOverride(this)); // auton override
     buttonY2.whileHeld(new Climb(this));
+    buttonClickLeft2.whileHeld(new MoveElevatorUp(0.25, elevator)); // raise elevator manually
+    buttonClickRight2.whileHeld(new MoveElevatorDown(0.25, elevator)); // lower elevator manually
   }
 
   public Elevator getElevator() {

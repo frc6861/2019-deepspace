@@ -16,6 +16,6 @@ public class AntiClockwiseTurn extends CommandGroup {
 
 	public AntiClockwiseTurn(double timeout,DriveTrain driveTrain) {
         addSequential(new TurnRight(0.25, driveTrain, -0.5));//turn left
-        addSequential(new StopMoving(0.01, driveTrain));
+       
     }
 }

@@ -19,10 +19,9 @@ public class RightAutonCargoMid1Mid2 extends CommandGroup {
 
 	public RightAutonCargoMid1Mid2(double timeout,DriveTrain driveTrain) {
         addSequential(new MoveForward(2, driveTrain, 0.5));
-        //addSequential(new StopMoving(0.01, driveTrain));
-        //use mechanism to push hatch "DispenseTimed or whatever"
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
         addSequential(new MoveForward(2, driveTrain, -0.5));//backward
-        //addSequential(new StopMoving(0.01, driveTrain));
         addSequential(new TurnRight(0.5, driveTrain, -0.5));//turn left
         addSequential(new MoveRight(0.5, driveTrain, -0.5));//left
         addSequential(new MoveForward(3, driveTrain, 0.5));
@@ -30,7 +29,8 @@ public class RightAutonCargoMid1Mid2 extends CommandGroup {
         addSequential(new TurnRight(0.5, driveTrain, -0.5));//turn left
         addSequential(new StrafeRightMoveForward(2, driveTrain, 0.4, -0.4));//forward and left
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
         
     }
 

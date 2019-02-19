@@ -20,7 +20,8 @@ public class LeftAutonCargoSide1Rocket1 extends CommandGroup {
 	public LeftAutonCargoSide1Rocket1(double timeout,DriveTrain driveTrain) {
         addSequential(new MoveRight(2, driveTrain, -0.5));//move left
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
         addSequential(new MoveForward(0.5, driveTrain, -0.5));//backward
         addSequential(new TurnRight(0.5, driveTrain, 0.5));
         addSequential(new MoveForward(2, driveTrain, 0.5));
@@ -29,7 +30,8 @@ public class LeftAutonCargoSide1Rocket1 extends CommandGroup {
         addSequential(new MoveRight(1.5, driveTrain, 0.5));
         addSequential(new TurnRight(0.125, driveTrain, 0.5));
         addSequential(new MoveForward(0.5, driveTrain, 0.5));
-        //place hatch
+        //addSequential(new ExtendSolFront());
+        //addSequential(new RetractSolFront());
     }
 
         
