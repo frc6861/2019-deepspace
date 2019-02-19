@@ -12,10 +12,10 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.CameraServer;
 import frc.tyros.commands.RaiseElevator;
+import frc.tyros.commands.RetractSol;
 import frc.tyros.auton.AutonOverride;
 import frc.tyros.commands.Climb;
-import frc.tyros.commands.DeployHatch;
-import frc.tyros.commands.DeployBall;
+import frc.tyros.commands.ExtendSol;
 import frc.tyros.commands.LiftIngestor;
 import frc.tyros.commands.LowerIngestor;
 import frc.tyros.commands.RunIngestor;
@@ -83,8 +83,8 @@ public class OI {
     buttonY1.whenPressed(new LowerIngestor(this)); // put ingestor back down
     buttonClickLeft1.whenPressed(new AntiClockwiseTurn(0.26, driveTrain)); // rotate left 90 deg
     buttonClickRight1.whenPressed(new ClockwiseTurn(0.26, driveTrain)); // rotate right 90 deg
-    buttonLB1.whenPressed(new DeployHatch(this)); // deploy hatch
-    buttonRB1.whenPressed(new DeployBall(this)); // shoot ball
+    buttonLB1.whenPressed(new ExtendSol(this));
+    buttonRB1.whenPressed(new RetractSol(this));
     buttonBack1.whileHeld(new AutonOverride(this));
     buttonA2.whenPressed(new RaiseElevator(this, 80)); // ballCargoShip
     buttonX2.whenPressed(new RaiseElevator(this, 48)); // hatchRocketandCargoShip
